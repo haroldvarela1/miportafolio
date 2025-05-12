@@ -1,0 +1,76 @@
+body {
+  font-family: sans-serif;
+  margin: 40px;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 950px;
+  width: 100%;
+}
+
+.project-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out; /* Transición para el deslizamiento */
+  cursor: pointer; /* Indica que es interactivo */
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Deslizamiento hacia arriba al pasar el cursor */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hacer hover */
+}
+
+.project-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.project-card h2 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.project-card p {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 0;
+}
+
+/* Estilos específicos para cada proyecto */
+.project-card:nth-child(1) img {
+  background-color: #e0f7fa; /* Light cyan */
+  padding: 20px;
+}
+
+.project-card:nth-child(2) img {
+  /* La imagen ya tiene un fondo oscuro */
+}
+
+.project-card:nth-child(3) img {
+  background-color: #f0f4c3; /* Light olive */
+  padding: 20px;
+}
