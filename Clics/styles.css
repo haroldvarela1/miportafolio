@@ -1,0 +1,59 @@
+body {
+  background-color: beige;
+}
+
+.contador {
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 100);
+  padding: 30px;
+  text-align: center;
+  font-family: sans-serif;
+  vertical-align: middle;
+}
+
+h1 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 20%;
+  vertical-align: middle;
+}
+
+.clicks {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background ease-in .3s;
+  vertical-align: middle;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); /* Sombra inicial */
+}
+
+.calculo:active{
+  transform: translateY(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.calcular {
+  padding: 7px 25px;
+  text-align: center;
+}
+
+.calcular:hover {
+  background-color: rgb(255, 0, 0);
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Básico</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="tarjeta">
+    <h1>Formulario Básico</h1>
+
+    <form id="formulario" action="formulario.php" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" title="Ingrese su nombre" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" title="Ingrese su correo electrónico así: xxxxxxxx@xxxxxx.com" required>
+
+      <label for="contraseña">Contraseña:</label>
+      <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña"
+             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{6,12}$"
+             title="Su contraseña debe contener entre 6 y 12 caracteres, incluyendo al menos una letra mayúscula y minúscula, un número y un símbolo" required>
+
+      <label for="genero">Género:</label><br>
+      <input type="radio" id="masculino" name="genero" value="masculino">
+      <label for="masculino">Masculino</label>
+      <input type="radio" id="femenino" name="genero" value="femenino">
+      <label for="femenino">Femenino</label><br><br>
+
+      <label for="intereses">Intereses:</label><br>
+      <input type="checkbox" id="deportes" name="intereses[]" value="deportes">
+      <label for="deportes">Deportes</label>
+      <input type="checkbox" id="musica" name="intereses[]" value="musica">
+      <label for="musica">Música</label>
+      <input type="checkbox" id="arte" name="intereses[]" value="arte">
+      <label for="arte">Arte</label><br><br>
+
+      <label for="pais">País:</label>
+      <select id="pais" name="pais" required>
+        <option value="">Seleccione un país</option>
+        <option value="españa">España</option>
+        <option value="mexico">México</option>
+        <option value="argentina">Argentina</option>
+        <!-- Puedes reducir esta lista según necesidad -->
+      </select>
+
+      <label for="comentarios">Comentarios:</label>
+      <textarea id="comentarios" name="comentarios" placeholder="Ingrese sus comentarios aquí" required></textarea>
+
+      <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+      <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="2025-12-31" min="1900-01-01" max="2050-12-31" required>
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono" required>
+
+      <input type="submit" value="Enviar">
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("formulario").addEventListener("submit", function(event) {
+      const checkboxes = document.querySelectorAll('input[name="intereses[]"]');
+      const algunoMarcado = Array.from(checkboxes).some(checkbox => checkbox.checked);
+
+      if (!algunoMarcado) {
+        event.preventDefault();
+        alert("Por favor, selecciona al menos un interés.");
+      }
+    });
+  </script>
+</body>
+</html>

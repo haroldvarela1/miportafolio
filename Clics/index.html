@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de clics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contador">
+        <h1>Contador de clics</h1>
+        <button class="clicks" onclick="contarClic()">¡Haz clic aquí!</button>
+        <div id="contador">Cantidad de clics: 0</div>
+    </div>
+    <script>
+        let contadorClicks = 0; // Inicializamos el contador en cero
+        function contarClic() {
+            contadorClicks++; // Incrementamos el contador en cada clic
+            document.getElementById('contador').textContent = "Cantidad de clics: " + contadorClicks; // Actualizamos el texto del div
+        }
+    </script>
+</body>
+</html>
